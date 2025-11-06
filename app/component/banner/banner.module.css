@@ -1,0 +1,11 @@
+.workout__banner img {
+  height: 560px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .workout__banner img {
+    height: 180px;
+    object-fit: cover;
+  }
+}

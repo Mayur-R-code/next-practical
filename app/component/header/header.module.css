@@ -1,0 +1,14 @@
+.workout_header{
+    max-width: 944px;
+    margin: 0 auto;
+    padding-bottom: 62px;
+    padding-top: 62px;
+    background-color: #fff;
+}
+
+.nav_list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

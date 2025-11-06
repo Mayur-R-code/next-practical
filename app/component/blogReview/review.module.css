@@ -1,0 +1,64 @@
+.tour_guide {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 1px;
+  color: #10152e;
+}
+.tour_guide_main {
+  margin-top: 80px;
+}
+.review_img_1 {
+  margin-top: 40px;
+}
+.review_img_1 .user_img {
+  border-radius: 50%;
+  margin: 0 !important;
+  width: 57px;
+  height: 57px;
+  object-fit: cover;
+}
+.review_img_1 {
+  display: flex;
+  gap: 15px;
+}
+.user_name {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 1px;
+  color: #000000;
+}
+.user_review {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.user_location img {
+  margin: 0 !important;
+  object-fit: none;
+}
+.user_location {
+  display: flex;
+  gap: 5px;
+}
+.rating img {
+  margin: 0px !important;
+  width: 20px;
+  height: 20px;
+}
+.rating {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+.rating p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+  color: #121212;
+}
