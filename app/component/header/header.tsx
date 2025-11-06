@@ -10,7 +10,7 @@ const Header = () => {
           </li>
           <span>/</span>
           <li>
-            <Link href="/articals">ARTICALS</Link>
+            <Link href="/articals">ARTICELS</Link>
           </li>
           <span>/</span>
         </ul>
