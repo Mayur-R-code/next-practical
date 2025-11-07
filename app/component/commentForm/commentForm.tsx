@@ -1,5 +1,5 @@
+import CommonInput from "@/app/commoncomponent/input/input";
 import Image from "next/image";
-import React from "react";
 
 const CommentForm = () => {
   return (
@@ -9,15 +9,11 @@ const CommentForm = () => {
         <div>
           <div>
             <label htmlFor="name">Name</label>
-            <div>
-              <input type="text" />
-            </div>
+            <CommonInput type="text" />
           </div>
           <div className="email__lable">
             <label htmlFor="email">Email</label>
-            <div>
-              <input type="email" />
-            </div>
+            <CommonInput type="email" />
           </div>
         </div>
         <div>
