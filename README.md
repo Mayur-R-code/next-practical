@@ -17,9 +17,17 @@ pnpm dev
 bun dev
 ```
 ##  Node Version
-20.19
+Node.js: v20.19.0
+
 ## Next js Version
-16
+Next.js: v16
+
+## Build the Development Version
+npm run build
+
+## After build run this command
+npm start
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
