@@ -1,53 +1,55 @@
 import React from "react";
 import styles from "@/app/component/comments/comments.module.css";
 import Image from "next/image";
+import { commentsData } from "@/app/data/userSliderData";
 const Comments = () => {
   return (
     <section className="workouts-container">
-      <div className={`${styles.comment__main}`}>Comments</div>
-      <div className={`${styles.comments}`}>
-        <Image src="/img4.png" width={60} height={60} alt="user"></Image>
-        <div>
-          <div className={`${styles.comments_name_1}`}>
-            <div className={`${styles.comments_name}`}>
-              <span>Kang Haerin</span>{" "}
-              <div className={`${styles.rating}`}>
-                <Image
-                  src={"/rating.png"}
-                  width={15}
-                  height={15}
-                  alt="rating"
-                ></Image>
-                <Image
-                  src={"/rating.png"}
-                  width={15}
-                  height={15}
-                  alt="rating"
-                ></Image>
-                <Image
-                  src={"/rating.png"}
-                  width={15}
-                  height={15}
-                  alt="rating"
-                ></Image>
-                <Image
-                  src={"/star.png"}
-                  width={15}
-                  height={15}
-                  alt="rating"
-                ></Image>
-                <span>(4)</span>
-              </div>
-            </div>
-            <span>22 Jul 2022</span>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus{" "}
-          </p>
-        </div>
+      <div className={`${styles.comment_main}`}>
+        <span></span>
+        <div className={`${styles.comment__main}`}>Comments</div>
       </div>
+      {commentsData?.map((item) => (
+        <div className={`${styles.comments}`} key={item?.id}>
+          <Image src="/img4.png" width={60} height={60} alt="user"></Image>
+          <div style={{ width: "100%" }}>
+            <div className={`${styles.comments_name_1}`}>
+              <div className={`${styles.comments_name}`}>
+                <span>{item?.name}</span>{" "}
+                <div className={`${styles.rating}`}>
+                  <Image
+                    src={"/rating.png"}
+                    width={15}
+                    height={15}
+                    alt="rating"
+                  ></Image>
+                  <Image
+                    src={"/rating.png"}
+                    width={15}
+                    height={15}
+                    alt="rating"
+                  ></Image>
+                  <Image
+                    src={"/rating.png"}
+                    width={15}
+                    height={15}
+                    alt="rating"
+                  ></Image>
+                  <Image
+                    src={"/star.png"}
+                    width={15}
+                    height={15}
+                    alt="rating"
+                  ></Image>
+                  <span>(4)</span>
+                </div>
+              </div>
+              <span>{item?.date}</span>
+            </div>
+            <p>{item?.comment}</p>
+          </div>
+        </div>
+      ))}
     </section>
   );
 };

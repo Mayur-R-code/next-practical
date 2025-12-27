@@ -1,40 +1,110 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
 import styles from "@/app/component/userCard/card.module.css";
 import Image from "next/image";
+import { LuCircleArrowLeft, LuCircleArrowRight } from "react-icons/lu";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperType } from "swiper/types";
+import "swiper/css";
+import { userSliderData } from "@/app/data/userSliderData";
+
 const UserCard = () => {
+  const swiperRef = useRef<SwiperType | null>(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      if (!swiperRef.current) return;
+
+      swiperRef.current.update();
+      swiperRef.current.slideTo(swiperRef.current.activeIndex, 0);
+
+      setIsBeginning(swiperRef.current.isBeginning);
+      setIsEnd(swiperRef.current.isEnd);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
-      <div className={`${styles.user__main}`}>
-        <div className={`${styles.user_img}`}> About Alex Carter</div>
-        <Image
-          src="/img2.jpg"
-          className="rounded-img"
-          width={100}
-          height={100}
-          alt="user"
-        ></Image>
-        <p className={`${styles.user_desc}`}>
-          With over a decade in fitness, Alex specializes in strength training.
-          Certified by NASM, he designs challenging yet achievable workout
-          programs. His passion is helping clients build strength and confidence
-          through personalized routines. Outside the gym, Alex enjoys running
-          and outdoor adventures.
-        </p>
-      </div>
-      <div className={`${styles.slider__btn}`}>
+      {/* SLIDER */}
+      <Swiper
+        slidesPerView={1}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+          setIsBeginning(swiper.isBeginning);
+          setIsEnd(swiper.isEnd);
+        }}
+        onSlideChange={(swiper) => {
+          setIsBeginning(swiper.isBeginning);
+          setIsEnd(swiper.isEnd);
+        }}
+      >
+        {userSliderData.map((item) => (
+          <SwiperSlide key={item.id}>
+            <div className={styles.user__main}>
+              <div className={styles.user_img}>About {item.name}</div>
+
+              <Image
+                src={item.image}
+                className="rounded-img"
+                width={100}
+                height={100}
+                alt={item.name}
+              />
+
+              <p className={styles.user_desc}>{item.desc}</p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* BUTTONS – SAME UI */}
+      <div className={styles.slider__btn}>
         <div>
-          <button className={`${styles.slider__prev_btn}`}>
-            <Image src="/icon.svg" width={16} height={16} alt="icon"></Image>
-            Previous
-          </button>
-          <p className={`${styles.slider__prev_btn_text}`}>5 Tips for Better Cardio Sessions</p>
+          <div>
+            <button
+              onClick={() => swiperRef.current?.slidePrev()}
+              disabled={isBeginning}
+              className={`
+              ${styles.slider__prev_btn}
+              ${isBeginning ? styles.disabled : ""}
+            `}
+            >
+              <LuCircleArrowLeft />
+              Previous
+            </button>
+          </div>
+
+          <p className={styles.slider__prev_btn_text}>
+            5 Tips for Better Cardio Sessions
+          </p>
         </div>
+
         <div>
-          <button className={`${styles.slider__next_btn}`}>
-            Next
-            <Image src="/icon1.svg" width={16} height={16} alt="icon"></Image>
-          </button>
-          <p className={`${styles.slider__prev_btn_text}`}>Meal Prep Basics for Gym Enthusiasts</p>
+          <div className={`${styles.slider_btn_main}`}>
+            <button
+              onClick={() => swiperRef.current?.slideNext()}
+              disabled={isEnd}
+              className={`
+              ${styles.slider__next_btn}
+              ${isEnd ? styles.disabled : ""}
+            `}
+            >
+              Next
+              <LuCircleArrowRight />
+            </button>
+          </div>
+
+          <p className={styles.slider__prev_btn_text}>
+            Meal Prep Basics for Gym Enthusiasts
+          </p>
         </div>
       </div>
     </>

@@ -10,7 +10,7 @@
   margin-top: 80px;
 }
 .review_img_1 {
-  margin-top: 40px;
+  margin-top: 25px;
 }
 .review_img_1 .user_img {
   border-radius: 50%;
@@ -46,13 +46,14 @@
 }
 .rating img {
   margin: 0px !important;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 .rating {
   margin-top: 15px;
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 .rating p {
   font-style: normal;
@@ -61,4 +62,13 @@
   line-height: 18px;
   letter-spacing: 0.5px;
   color: #121212;
+}
+.tour_main {
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 25px;
+}
+@media screen and (max-width:668px) {
+  .review_img_1{
+    margin-top: 25px;
+  }
 }

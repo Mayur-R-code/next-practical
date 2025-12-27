@@ -58,14 +58,14 @@ export const BLOG_DATA = [
     date: " | 13 Jun 2022",
     tag: "Travel",
     img:"/blog1.png",
-    desc: "Two women in local stand are chatting during morning",
+    desc: "Enjoying the sunset on Padar island together",
   },
   {
     id: 3,
     date: " | 13 Jun 2022",
-    tag: "Culinary",
-    img:"/blog1.png",
-    desc: "Two women in local stand are chatting during morning",
+    tag: "Travel",
+    img:"/blog2.png",
+    desc: "The lush green surroundings of the campgrounds create a..",
   },
 ];
 
@@ -80,6 +80,12 @@ export const REVIEW = [
     id:2,
     name:"Danielle Marsh",
     location:"Wonosobo, Jawa ten..",
+    rate:"(0.4)"
+  },
+  {
+    id:3,
+    name:"Kang Haerin",
+    location:"Bandung, Jawa barat",
     rate:"(0.4)"
   },
 ]

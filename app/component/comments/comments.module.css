@@ -1,5 +1,4 @@
 .comment__main {
-  margin-top: 68px;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -7,6 +6,19 @@
   letter-spacing: 1px;
   text-transform: capitalize;
   color: #000000;
+}
+
+.comment_main {
+  margin-top: 68px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.comment_main span {
+  width: 4px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #000000;
 }
 .comments img {
   border-radius: 50%;
@@ -18,13 +30,12 @@
   display: flex;
   gap: 20px;
   padding-bottom: 30px;
-  border-bottom: 1px solid #DEDEDE;
-
+  border-bottom: 1px solid #dedede;
   margin-top: 30px;
 }
 .rating {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   margin-top: 5px;
 }
 .rating img {
@@ -33,15 +44,22 @@
 }
 .comments_name {
   display: flex;
-  gap: 8px;
+  gap: 18px;
   margin-bottom: 4px;
 }
 
-.rating span{
-    margin-top: -5px;
+.rating span {
+  margin-top: -5px;
 }
-.comments_name_1{
-    display: flex;
-    justify-content: space-between;
+.comments_name_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 668px) {
+  .comments {
     align-items: center;
+  }
 }

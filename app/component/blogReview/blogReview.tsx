@@ -7,8 +7,8 @@ const BlogReview = () => {
   return (
     <div className={`${styles.tour_guide_main}`}>
       <span className={`${styles.tour_guide}`}>Tour Guides</span>
-      {REVIEW.map((item) => (
-        <div key={item.id}>
+      {REVIEW?.map((item) => (
+        <div key={item.id} className={`${styles.tour_main}`}>
           <div className={`${styles.review_img_1}`}>
             <Image
               src="/img4.png"

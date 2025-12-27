@@ -7,8 +7,8 @@ import BlogCard from "../blogCard/blogCard";
 
 const BlogPost = () => {
   return (
-    <section className="workouts-container">
-      <div className={`${styles.workout_post}`}>
+    <section className="section_bg">
+      <div className={`${styles.workout_post} workouts-container`}>
         <div className={`${styles.workout}`}>
           <div className={`${styles.user__img}`}>
             <div className={`${styles.blog_author}`}>
@@ -41,7 +41,9 @@ const BlogPost = () => {
             <UserCard />
           </div>
         </div>
-        <BlogCard />
+        {/* <div className="blog__card_visible"> */}
+          <BlogCard />
+        {/* </div> */}
       </div>
       <div className={`${styles.user__card_1}`}>
         <UserCard />

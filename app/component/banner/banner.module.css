@@ -1,11 +1,13 @@
 .workout__banner img {
-  height: 560px;
+  height: 480px;
   object-fit: cover;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .workout__banner img {
-    height: 180px;
+    height: 232px;
+    width: 95%;
+    margin: 0 auto;
     object-fit: cover;
   }
 }

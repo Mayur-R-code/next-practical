@@ -1,14 +1,25 @@
-.workout_header{
-    max-width: 944px;
-    margin: 0 auto;
-    padding-bottom: 62px;
-    padding-top: 62px;
-    background-color: #fff;
+.workout_header {
+  max-width: 944px;
+  margin: 0 auto;
+  padding-bottom: 58px;
+  padding-top: 58px;
+  background-color: #fff;
+  width: 95%;
 }
 
-.nav_list{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.nav_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.nav_list a {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #262D4D;
+  line-height: 20px;
+}
+.active{
+  font-weight: 700 !important;
 }
