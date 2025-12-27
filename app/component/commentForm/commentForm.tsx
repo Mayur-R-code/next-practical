@@ -1,5 +1,5 @@
-import CommonInput from "@/app/commoncomponent/input/input";
 import Image from "next/image";
+import CommonInput from "../comman/input/input";
 
 const CommentForm = () => {
   return (

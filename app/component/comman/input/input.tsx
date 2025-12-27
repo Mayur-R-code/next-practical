@@ -17,7 +17,7 @@ const CommonInput: React.FC<CommonInputProps> = ({
   type = "text",
   value,
   onChange,
-  placeholder = "Enter text...",
+  placeholder = "",
   className = "",
   name,
   required = false,
