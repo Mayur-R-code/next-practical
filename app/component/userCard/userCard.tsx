@@ -12,9 +12,12 @@ import { userSliderData } from "@/app/data/userSliderData";
 
 const UserCard = () => {
   const swiperRef = useRef<SwiperType | null>(null);
+
+  //State to manage navigation button disable state
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
-  
+
+  // Handle Swiper updates on window resize
   useEffect(() => {
     const handleResize = () => {
       if (!swiperRef.current) return;
@@ -28,6 +31,7 @@ const UserCard = () => {
 
     window.addEventListener("resize", handleResize);
 
+    // Cleanup listener on unmount
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -65,7 +69,7 @@ const UserCard = () => {
         ))}
       </Swiper>
 
-      {/* BUTTONS – SAME UI */}
+      {/* BUTTONS*/}
       <div className={styles.slider__btn}>
         <div>
           <div>

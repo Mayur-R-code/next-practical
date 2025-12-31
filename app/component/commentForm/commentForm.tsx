@@ -3,11 +3,17 @@ import CommonInput from "../comman/input/input";
 
 const CommentForm = () => {
   return (
-    <section className="workouts-container">
+    <section
+      className="workouts-container"
+      aria-labelledby="add-comment-heading"
+    >
+      {/* Section heading */}
       <div className={`comment_form_main`}>
         <span></span>
-      <div className={`comment_form`}>Add a comment</div>
+        <div className={`comment_form`}>Add a comment</div>
       </div>
+
+      {/* Comment form */}
       <form action="">
         <div>
           <div>
@@ -55,7 +61,7 @@ const CommentForm = () => {
                 height={16}
                 alt="emoji"
               ></Image>
-              <button className="form_submit__btn">
+              <button className="form_submit__btn" aria-label="Send comment">
                 {/* <Image
                   src={"/icon6.png"}
                   width={16}
@@ -79,7 +85,10 @@ const CommentForm = () => {
             </div>
           </div>
         </div>
-        <button className="form_submit__btn_1">
+        <button
+          className="form_submit__btn_1"
+          aria-label="Send comment with confirmation"
+        >
           {/* <Image src={"/icon7.png"} width={16} height={16} alt="img"></Image>{" "} */}
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -12,6 +12,8 @@ import "swiper/css";
 
 const BlogCardSlider = () => {
   const swiperRef = useRef<SwiperType | null>(null);
+
+  // State to control navigation button disable status
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
@@ -21,6 +23,7 @@ const BlogCardSlider = () => {
         swiperOptions={{
           spaceBetween: 20,
           slidesPerView: 3,
+          // Responsive breakpoints
           breakpoints: {
             0: { slidesPerView: 1 },
             530: { slidesPerView: 2 },
@@ -28,17 +31,20 @@ const BlogCardSlider = () => {
             1024: { slidesPerView: 3 },
           },
         }}
+        //Save instance & set initial navigation state
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
           setIsBeginning(swiper.isBeginning);
           setIsEnd(swiper.isEnd);
         }}
+        //Triggered on every slide change Updates navigation button state
         onSlideChange={(swiper) => {
           setIsBeginning(swiper.isBeginning);
           setIsEnd(swiper.isEnd);
         }}
       >
-        {BLOG_DATA.map((item) => (
+        {/* Render blog cards dynamically */}
+        {BLOG_DATA?.map((item) => (
           <SwiperSlide key={item.id}>
             <div>
               <Image
@@ -57,6 +63,7 @@ const BlogCardSlider = () => {
             </div>
           </SwiperSlide>
         ))}
+
         {/* SLIDER BUTTONS */}
       </CommonSlider>
       <div className={styles.slider__btn}>
@@ -65,6 +72,8 @@ const BlogCardSlider = () => {
           <button
             onClick={() => swiperRef.current?.slidePrev()}
             disabled={isBeginning}
+            aria-label="Go to previous blog slide"
+            aria-disabled={isBeginning}
             className={`${styles.slider__prev_btn} ${
               isBeginning ? styles.disabled : ""
             }`}
@@ -79,6 +88,8 @@ const BlogCardSlider = () => {
           <button
             onClick={() => swiperRef.current?.slideNext()}
             disabled={isEnd}
+            aria-label="Go to next blog slide"
+            aria-disabled={isEnd}
             className={`${styles.slider__next_btn} ${
               isEnd ? styles.disabled : ""
             }`}

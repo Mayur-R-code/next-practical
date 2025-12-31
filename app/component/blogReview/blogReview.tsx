@@ -5,10 +5,23 @@ import { REVIEW } from "@/app/data/post";
 
 const BlogReview = () => {
   return (
-    <div className={`${styles.tour_guide_main}`}>
+    <div
+      className={`${styles.tour_guide_main}`}
+      role="region"
+      aria-labelledby="tour-guides-heading"
+    >
+      {/* Section heading */}
       <span className={`${styles.tour_guide}`}>Tour Guides</span>
+
+      {/* Reviews list */}
+
       {REVIEW?.map((item) => (
-        <div key={item.id} className={`${styles.tour_main}`}>
+        <div
+          key={item.id}
+          className={`${styles.tour_main}`}
+          role="list"
+          aria-label="Tour guide reviews"
+        >
           <div className={`${styles.review_img_1}`}>
             <Image
               src="/img4.png"

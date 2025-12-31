@@ -7,9 +7,14 @@ import BlogCard from "../blogCard/blogCard";
 
 const BlogPost = () => {
   return (
-    <section className="section_bg">
+    <section
+      className="section_bg"
+      role="region"
+      aria-labelledby="blog-post-heading"
+    >
       <div className={`${styles.workout_post} workouts-container`}>
         <div className={`${styles.workout}`}>
+          {/* Author info */}
           <div className={`${styles.user__img}`}>
             <div className={`${styles.blog_author}`}>
               <Image
@@ -25,6 +30,7 @@ const BlogPost = () => {
 
           <div className={`${styles.item__txt}`}>
             {DISCOVER_EXERCIES.map((item) => {
+              //Highlight specific paragraph
               const isBoldText = item.id === 5;
               return (
                 <p
@@ -42,7 +48,9 @@ const BlogPost = () => {
           </div>
         </div>
         {/* <div className="blog__card_visible"> */}
-          <BlogCard />
+        
+        {/* Blog cards (desktop view) */}
+        <BlogCard />
         {/* </div> */}
       </div>
       <div className={`${styles.user__card_1}`}>

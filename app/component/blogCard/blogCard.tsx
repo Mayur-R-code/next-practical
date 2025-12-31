@@ -5,11 +5,20 @@ import BlogReview from "../blogReview/blogReview";
 import BlogCardSlider from "../comman/blogCardSlider/BlogCardSlider";
 const BlogCard = () => {
   return (
-    <div className={`${styles.blog_card_main}`}>
+    <div
+      className={`${styles.blog_card_main}`}
+      role="region"
+      aria-labelledby="explore-more-heading"
+    >
+      {/* Section heading */}
       <div className={`${styles.explore__more}`}>Explore more </div>
-      <div className={`${styles.blog_card_small}`}>
-        {BLOG_DATA.map((item) => (
-          <div key={item.id}>
+      <div
+        className={`${styles.blog_card_small}`}
+        role="list"
+        aria-label="Explore more blog articles"
+      >
+        {BLOG_DATA?.map((item) => (
+          <div key={item.id} role="listitem">
             <Image
               src={item.img}
               width={301}
@@ -25,7 +34,11 @@ const BlogCard = () => {
           </div>
         ))}
       </div>
-      <BlogCardSlider/>
+      
+      {/* Blog card slider */}
+      <BlogCardSlider />
+
+      {/* Blog reviews */}
       <BlogReview />
     </div>
   );

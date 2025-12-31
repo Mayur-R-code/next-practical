@@ -53,6 +53,7 @@ interface ArticleCardProps {
 const ArticleCard = ({ article }: ArticleCardProps) => {
   return (
     <article className="article-card">
+      {/* Article image section */}
       <div className="article-image-wrapper">
         <img
           src={article.image}
@@ -61,6 +62,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
           loading="lazy"
         />
       </div>
+      {/* Article content */}
       <div className="article-content">
         <h3 className="article-heading">{article.title}</h3>
         <p className="article-excerpt">{article.excerpt}</p>
