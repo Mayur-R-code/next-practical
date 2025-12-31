@@ -73,7 +73,7 @@ input:focus {
   outline: none;
 }
 
-form {
+.form_container {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 equal columns */
   gap: 20px; /* space between columns */
@@ -95,6 +95,10 @@ textarea {
   padding: 12px;
   border-radius: 15px;
   width: 100%;
+}
+.error {
+  color: red;
+  font-size: 14px;
 }
 .rate_emoji {
   display: flex;
@@ -224,7 +228,7 @@ textarea:focus {
     font-size: 28px;
     line-height: 40px;
   }
-  form {
+  .form_container {
     grid-template-columns: 1fr;
   }
   .main__rate {
@@ -237,7 +241,7 @@ textarea:focus {
     justify-content: center;
     gap: 8px;
   }
-  .emoji_list{
+  .emoji_list {
     gap: 27px;
     margin-top: 15px;
   }
